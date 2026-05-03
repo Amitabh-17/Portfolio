@@ -47,10 +47,10 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
             >
-              Creative
+              Hi, I'm
               <br />
               <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                Professional
+                a CSE Data Science Student
               </span>
             </motion.h1>
           </ParallaxSection>
@@ -62,7 +62,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
             >
-              Crafting immersive digital experiences through cutting-edge technology and innovative design
+              3rd-year B.Tech CSE (Data Science) student building smooth, performant, and user-focused web + AI projects.
             </motion.p>
           </ParallaxSection>
           
@@ -78,7 +78,7 @@ export default function HeroSection() {
                 className="futuristic-button text-lg px-8 py-4"
                 onClick={() => scrollToSection('portfolio')}
               >
-                View Portfolio
+                View Projects
                 <ArrowDown className="ml-2 h-5 w-5" />
               </Button>
             </MagneticButton>
@@ -89,7 +89,7 @@ export default function HeroSection() {
                 className="glass-effect text-lg px-8 py-4"
                 onClick={() => scrollToSection('contact')}
               >
-                Get In Touch
+                Let's Connect
               </Button>
             </MagneticButton>
           </motion.div>
@@ -105,7 +105,7 @@ export default function HeroSection() {
                 <div className="glass-effect p-4 rounded-full mb-2 inline-block">
                   <Code className="h-8 w-8 text-primary" />
                 </div>
-                <p className="text-sm text-muted-foreground">Clean Code</p>
+                <p className="text-sm text-muted-foreground">DS + Development</p>
               </div>
             </FloatingElement>
             <FloatingElement duration={3.5} delay={0.5} distance={10}>
@@ -113,7 +113,7 @@ export default function HeroSection() {
                 <div className="glass-effect p-4 rounded-full mb-2 inline-block">
                   <Palette className="h-8 w-8 text-primary" />
                 </div>
-                <p className="text-sm text-muted-foreground">Modern Design</p>
+                <p className="text-sm text-muted-foreground">Smooth UI</p>
               </div>
             </FloatingElement>
             <FloatingElement duration={4} delay={1} distance={12}>
@@ -121,7 +121,7 @@ export default function HeroSection() {
                 <div className="glass-effect p-4 rounded-full mb-2 inline-block">
                   <Zap className="h-8 w-8 text-primary" />
                 </div>
-                <p className="text-sm text-muted-foreground">Lightning Fast</p>
+                <p className="text-sm text-muted-foreground">Performance First</p>
               </div>
             </FloatingElement>
           </motion.div>

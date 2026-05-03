@@ -26,28 +26,28 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@creativepro.com',
-    link: 'mailto:hello@creativepro.com',
+    value: 'yourname@email.com',
+    link: 'mailto:yourname@email.com',
   },
   {
     icon: Phone,
     label: 'Phone',
-    value: '+1 (555) 123-4567',
-    link: 'tel:+15551234567',
+    value: '+91 00000 00000',
+    link: 'tel:+910000000000',
   },
   {
     icon: MapPin,
     label: 'Location',
-    value: 'San Francisco, CA',
-    link: '#',
+    value: 'India',
+    link: 'https://maps.google.com',
   },
 ]
 
 const socialLinks = [
-  { icon: Github, label: 'GitHub', url: '#', color: 'hover:text-gray-400' },
-  { icon: Linkedin, label: 'LinkedIn', url: '#', color: 'hover:text-blue-400' },
-  { icon: Twitter, label: 'Twitter', url: '#', color: 'hover:text-blue-300' },
-  { icon: MessageCircle, label: 'Discord', url: '#', color: 'hover:text-purple-400' },
+  { icon: Github, label: 'GitHub', url: 'https://github.com/', color: 'hover:text-gray-400' },
+  { icon: Linkedin, label: 'LinkedIn', url: 'https://www.linkedin.com/', color: 'hover:text-blue-400' },
+  { icon: Twitter, label: 'Twitter', url: 'https://x.com/', color: 'hover:text-blue-300' },
+  { icon: MessageCircle, label: 'Discord', url: 'https://discord.com/', color: 'hover:text-purple-400' },
 ]
 
 export default function ContactSection() {
@@ -75,11 +75,11 @@ export default function ContactSection() {
     setIsSubmitting(true)
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      await new Promise(resolve => setTimeout(resolve, 1200))
       
       toast({
         title: "Message sent successfully!",
-        description: "I'll get back to you as soon as possible.",
+        description: "Thanks for reaching out. I will reply soon.",
       })
       
       setIsSubmitted(true)
@@ -113,7 +113,7 @@ export default function ContactSection() {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Let's collaborate on your next project. I'm always excited to work with new clients and creative minds.
+            Open to internships, collaborations, and project discussions in data science and software development.
           </p>
         </motion.div>
 
@@ -124,7 +124,7 @@ export default function ContactSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <GlassCard variant="default" className="p-8">
-              <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
+              <h3 className="text-2xl font-bold mb-6">Quick Contact</h3>
               
               <AnimatePresence mode="wait">
                 {isSubmitted ? (
@@ -139,7 +139,7 @@ export default function ContactSection() {
                     <p className="text-muted-foreground mb-6">
                       Thank you for reaching out. I'll get back to you soon.
                     </p>
-                    <Button onClick={() => setIsSubmitted(false)}>
+                    <Button onClick={() => setIsSubmitted(false)} aria-label="Reset contact form">
                       Send Another Message
                     </Button>
                   </motion.div>
@@ -254,6 +254,8 @@ export default function ContactSection() {
                       <div className="font-medium">{info.label}</div>
                       <a
                         href={info.link}
+                        target="_blank"
+                        rel="noreferrer"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
                         {info.value}
@@ -270,6 +272,9 @@ export default function ContactSection() {
                     <motion.a
                       key={social.label}
                       href={social.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`Visit ${social.label}`}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
                       transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}

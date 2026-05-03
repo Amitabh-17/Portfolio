@@ -8,42 +8,42 @@ import { NeumorphismCard } from '@/components/ui/neumorphism-card'
 
 const timelineItems = [
   {
-    year: '2024',
-    title: 'Senior Creative Developer',
-    company: 'Tech Innovations Inc.',
-    description: 'Leading development of immersive web experiences with cutting-edge technologies',
-    type: 'experience',
-  },
-  {
-    year: '2023',
-    title: 'Advanced 3D Design Certification',
-    company: 'Design Academy',
-    description: 'Specialized training in Three.js and WebGL development',
+    year: '2026',
+    title: 'B.Tech CSE (Data Science) - 3rd Year',
+    company: 'Current Academic Journey',
+    description: 'Focused on data science, machine learning fundamentals, and full-stack project development',
     type: 'education',
   },
   {
-    year: '2022',
-    title: 'Full Stack Developer',
-    company: 'Digital Solutions Ltd.',
-    description: 'Developed scalable web applications and led UI/UX initiatives',
+    year: '2025',
+    title: 'Built Real-World Portfolio Projects',
+    company: 'Self-Learning + Practice',
+    description: 'Developed projects using Next.js, TypeScript, and data-focused problem solving',
     type: 'experience',
   },
   {
-    year: '2021',
-    title: 'Computer Science Degree',
-    company: 'Tech University',
-    description: 'Graduated with honors, specializing in Human-Computer Interaction',
+    year: '2024',
+    title: 'Core CS + Data Skills Foundation',
+    company: 'Coursework + Labs',
+    description: 'Strengthened DSA, DBMS, statistics, and Python for analytics',
+    type: 'education',
+  },
+  {
+    year: '2023',
+    title: 'Started Engineering Journey',
+    company: 'B.Tech Program',
+    description: 'Started with programming basics and evolved toward software + data science projects',
     type: 'education',
   },
 ]
 
 const skills = [
-  { name: 'Frontend Development', level: 95, icon: Code },
-  { name: '3D Design', level: 85, icon: Palette },
-  { name: 'UI/UX Design', level: 90, icon: Users },
-  { name: 'Performance Optimization', level: 88, icon: Zap },
-  { name: 'Project Management', level: 82, icon: Target },
-  { name: 'Creative Strategy', level: 87, icon: BookOpen },
+  { name: 'Python & Data Analysis', level: 85, icon: Code },
+  { name: 'Machine Learning Basics', level: 78, icon: Palette },
+  { name: 'SQL & Databases', level: 80, icon: Users },
+  { name: 'Frontend Development', level: 82, icon: Zap },
+  { name: 'Data Visualization', level: 76, icon: Target },
+  { name: 'Problem Solving (DSA)', level: 84, icon: BookOpen },
 ]
 
 export default function AboutSection() {
@@ -70,7 +70,7 @@ export default function AboutSection() {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Passionate creative professional bridging the gap between technology and design
+            Aspiring software engineer focused on data science, practical projects, and continuous learning
           </p>
         </motion.div>
 
@@ -87,13 +87,13 @@ export default function AboutSection() {
               </h3>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  I'm a creative professional with a passion for building immersive digital experiences that blend cutting-edge technology with stunning design. My journey began at the intersection of code and creativity, where I discovered my love for bringing ideas to life through interactive web applications.
+                  I am a 3rd-year B.Tech CSE student specializing in Data Science. I enjoy building practical projects that combine clean frontend development with data-driven thinking.
                 </p>
                 <p>
-                  With expertise in both frontend development and 3D design, I specialize in creating experiences that not only look beautiful but also perform flawlessly. I believe in the power of technology to tell stories and create meaningful connections between brands and their audiences.
+                  My focus is to grow strongly in Python, machine learning, databases, and full-stack engineering while keeping products smooth, readable, and scalable.
                 </p>
                 <p>
-                  When I'm not coding or designing, you can find me exploring new technologies, contributing to open-source projects, or experimenting with the latest in webGL and creative coding.
+                  Currently, I'm improving DSA and building portfolio projects that reflect my academic journey and real implementation skills.
                 </p>
               </div>
             </GlassCard>

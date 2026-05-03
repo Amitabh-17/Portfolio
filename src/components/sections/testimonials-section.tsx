@@ -57,10 +57,10 @@ const testimonials = [
 ]
 
 const stats = [
-  { label: 'Happy Clients', value: '150+', icon: '👥' },
-  { label: 'Projects Completed', value: '200+', icon: '🚀' },
-  { label: 'Years Experience', value: '8+', icon: '⭐' },
-  { label: 'Awards Won', value: '25+', icon: '🏆' },
+  { label: 'Collaborative Projects', value: '12+', icon: '👥' },
+  { label: 'Projects Completed', value: '25+', icon: '🚀' },
+  { label: 'Years Learning', value: '3+', icon: '⭐' },
+  { label: 'Hackathons/Events', value: '6+', icon: '🏆' },
 ]
 
 export default function TestimonialsSection() {
@@ -102,7 +102,7 @@ export default function TestimonialsSection() {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            What my clients say about working together
+            Feedback from mentors, teammates, and collaborators on my student projects
           </p>
         </motion.div>
 
@@ -221,16 +221,16 @@ export default function TestimonialsSection() {
           className="mt-20 text-center"
         >
           <GlassCard variant="default" className="max-w-4xl mx-auto p-8">
-            <h3 className="text-2xl font-bold mb-4">Join My Happy Clients</h3>
+            <h3 className="text-2xl font-bold mb-4">Let's Build Something Great</h3>
             <p className="text-muted-foreground mb-6">
-              Ready to start your next project? Let's create something amazing together.
+              Interested in collaborating on a project, internship, or hackathon opportunity?
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="futuristic-button">
-                View My Work
+              <Button size="lg" className="futuristic-button" onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: "smooth" })}>
+                View Projects
               </Button>
-              <Button variant="outline" size="lg" className="glass-effect">
-                Get In Touch
+              <Button variant="outline" size="lg" className="glass-effect" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: "smooth" })}>
+                Contact Me
               </Button>
             </div>
           </GlassCard>

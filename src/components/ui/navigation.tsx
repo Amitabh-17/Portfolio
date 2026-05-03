@@ -9,8 +9,8 @@ import { ThemeToggle } from '@/components/theme-toggle'
 const navItems = [
   { id: 'home', label: 'Home', icon: Home },
   { id: 'about', label: 'About', icon: User },
-  { id: 'portfolio', label: 'Portfolio', icon: Briefcase },
-  { id: 'services', label: 'Services', icon: Settings },
+  { id: 'portfolio', label: 'Projects', icon: Briefcase },
+  { id: 'services', label: 'Skills', icon: Settings },
   { id: 'contact', label: 'Contact', icon: Mail },
 ]
 
@@ -21,14 +21,14 @@ export default function Navigation() {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map(item => item.id)
-      const scrollPosition = window.scrollY + 100
+      const scrollPosition = window.scrollY + 140
 
       for (const section of sections) {
         const element = document.getElementById(section)
         if (element) {
           const offsetTop = element.offsetTop
           const offsetHeight = element.offsetHeight
-          
+
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
             setActiveSection(section)
             break
@@ -37,7 +37,7 @@ export default function Navigation() {
       }
     }
 
-    window.addEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -45,35 +45,36 @@ export default function Navigation() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' })
       setIsOpen(false)
     }
   }
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/10 backdrop-blur-xl">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <motion.div
+            <motion.button
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               className="flex items-center space-x-2"
+              onClick={() => scrollToSection('home')}
             >
               <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">CP</span>
+                <span className="text-white font-bold text-sm">DS</span>
               </div>
-              <span className="text-xl font-bold">Creative Pro</span>
-            </motion.div>
+              <span className="text-xl font-bold">Data Science Portfolio</span>
+            </motion.button>
 
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden md:flex items-center space-x-6">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.id}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  transition={{ duration: 0.5, delay: index * 0.08 }}
                   onClick={() => scrollToSection(item.id)}
                   className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 ${
                     activeSection === item.id
@@ -89,12 +90,7 @@ export default function Navigation() {
 
             <div className="flex items-center space-x-4">
               <ThemeToggle />
-              <Button
-                variant="ghost"
-                size="icon"
-                className="md:hidden"
-                onClick={() => setIsOpen(!isOpen)}
-              >
+              <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
                 {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </Button>
             </div>
@@ -108,7 +104,7 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.25 }}
             className="fixed top-16 left-0 right-0 z-40 glass-effect border-b border-white/10 md:hidden"
           >
             <div className="container mx-auto px-4 py-4">
@@ -118,7 +114,7 @@ export default function Navigation() {
                     key={item.id}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.1 }}
+                    transition={{ duration: 0.25, delay: index * 0.06 }}
                     onClick={() => scrollToSection(item.id)}
                     className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${
                       activeSection === item.id
