@@ -1,10 +1,11 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme-toggle'
 import dynamic from 'next/dynamic'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 const HeroScene = dynamic(() => import('@/components/3d/hero-scene'), {
   ssr: false,
@@ -12,6 +13,9 @@ const HeroScene = dynamic(() => import('@/components/3d/hero-scene'), {
 })
 
 export default function HeroSection() {
+  const isMobile = useIsMobile()
+  const reduceMotion = useReducedMotion()
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) element.scrollIntoView({ behavior: 'smooth' })
@@ -19,7 +23,12 @@ export default function HeroSection() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <HeroScene />
+      {!isMobile && !reduceMotion ? (
+        <HeroScene />
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-b from-background/10 to-background/80" />
+      )}
+
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background/90" />
 
       <div className="relative z-10 container mx-auto px-4 text-center">
@@ -28,9 +37,9 @@ export default function HeroSection() {
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
           className="max-w-4xl mx-auto"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-glow">Hi, I'm a</h1>
