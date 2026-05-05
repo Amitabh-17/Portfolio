@@ -9,8 +9,8 @@ import { ThemeToggle } from '@/components/theme-toggle'
 const navItems = [
   { id: 'home', label: 'Home', icon: Home },
   { id: 'about', label: 'About', icon: User },
-  { id: 'portfolio', label: 'Portfolio', icon: Briefcase },
-  { id: 'services', label: 'Services', icon: Settings },
+  { id: 'projects', label: 'Projects', icon: Briefcase },
+  { id: 'skills', label: 'Skills', icon: Settings },
   { id: 'contact', label: 'Contact', icon: Mail },
 ]
 
@@ -64,7 +64,7 @@ export default function Navigation() {
               <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">CP</span>
               </div>
-              <span className="text-xl font-bold">Creative Pro</span>
+              <span className="text-xl font-bold">Portfolio</span>
             </motion.div>
 
             <div className="hidden md:flex items-center space-x-8">
