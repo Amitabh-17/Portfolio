@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Home, User, Briefcase, Mail, Settings, Award } from 'lucide-react'
+import { Menu, X, Home, User, Briefcase, Mail, Settings } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme-toggle'
 
@@ -11,7 +11,6 @@ const navItems = [
   { id: 'about', label: 'About', icon: User },
   { id: 'projects', label: 'Projects', icon: Briefcase },
   { id: 'skills', label: 'Skills', icon: Settings },
-  { id: 'certifications', label: 'Certifications', icon: Award },
   { id: 'contact', label: 'Contact', icon: Mail },
 ]
 
