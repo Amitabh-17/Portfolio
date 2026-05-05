@@ -26,19 +26,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@creativepro.com',
-    link: 'mailto:hello@creativepro.com',
+    value: 'your.email@example.com',
+    link: 'mailto:your.email@example.com',
   },
   {
     icon: Phone,
     label: 'Phone',
-    value: '+1 (555) 123-4567',
+    value: 'Available on request',
     link: 'tel:+15551234567',
   },
   {
     icon: MapPin,
     label: 'Location',
-    value: 'San Francisco, CA',
+    value: 'India',
     link: '#',
   },
 ]
@@ -113,7 +113,7 @@ export default function ContactSection() {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Let's collaborate on your next project. I'm always excited to work with new clients and creative minds.
+            Open to internships, collaborations, and data science opportunities.
           </p>
         </motion.div>
 

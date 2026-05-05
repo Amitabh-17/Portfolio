@@ -2,15 +2,16 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Menu, X, Home, User, Briefcase, Mail, Settings } from 'lucide-react'
+import { Menu, X, Home, User, Briefcase, Mail, Settings, Award } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { ThemeToggle } from '@/components/theme-toggle'
 
 const navItems = [
   { id: 'home', label: 'Home', icon: Home },
   { id: 'about', label: 'About', icon: User },
-  { id: 'portfolio', label: 'Portfolio', icon: Briefcase },
-  { id: 'services', label: 'Services', icon: Settings },
+  { id: 'projects', label: 'Projects', icon: Briefcase },
+  { id: 'skills', label: 'Skills', icon: Settings },
+  { id: 'certifications', label: 'Certifications', icon: Award },
   { id: 'contact', label: 'Contact', icon: Mail },
 ]
 
@@ -64,7 +65,7 @@ export default function Navigation() {
               <div className="w-8 h-8 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">CP</span>
               </div>
-              <span className="text-xl font-bold">Creative Pro</span>
+              <span className="text-xl font-bold">Portfolio</span>
             </motion.div>
 
             <div className="hidden md:flex items-center space-x-8">
